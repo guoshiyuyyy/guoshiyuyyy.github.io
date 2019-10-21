@@ -4,8 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=DmvaTbVhDI5FzcLmG8zcZQdPllicdMXQ"></script>
+	<script src=""></script>
 	<style>	
 	*{margin:0;padding: 0;list-style:none;}
+	[v-cloak]{
+			display:none;
+		}
 	.el-carousel__item h3 {
 	    color: #475669;
 	    font-size: 18px;
@@ -45,11 +50,29 @@
 	  	margin:290px auto;
 	  	background-color: #eee;
 	  }
-
+	  .fen{
+	  	width:320px;
+	  	height:2px;
+	  }
+	  .fen:hover{
+	  	background-color:yellowgreen;
+	  }
+	 .XSDFXPage {
+	        width: 920px;
+	        height: 500px;
+	 }
+	 .cha{
+		float:left;
+		margin:0px 63px;
+		padding:50px 0 0 ;
+	 }
+	 .cha:hover{
+	 	background-color: #eee;
+	 }
 </style>
 </head>
 <body>
-	<div id="box">
+	<div id="box"  v-cloak="">
 		<div style="min-height:50px;background-color:#fff;">
 			<div style="position:absolute;right:30px;top:0;z-index:3px;">
 				<div style="float:left;padding:0 20px;line-height: 50px;" v-for="i in arr">
@@ -87,16 +110,16 @@
 				</div>
 				<div slot="fan">
 					<div style="min-height:200px;float:left;">
-						<img  src="https://ccdn.goodq.top/caches/9b69daffc17579b848483c854813cad2/aHR0cHM6Ly81Y2RkM2FhNWM0NmVhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTgvMDgvNjFjNTQ1NWFmY2MyNGViMmZjY2VkOTk3YmMwMWE2MGMtMTAweDEwMC5wbmc_p_p100_p_3D.png" style="width:100px;height:100px;margin:60px 40px 0;">
+						<img  src="https://ccdn.goodq.top/caches/9b69daffc17579b848483c854813cad2/aHR0cHM6Ly81Y2RkM2FhNWM0NmVhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTgvMDgvNjFjNTQ1NWFmY2MyNGViMmZjY2VkOTk3YmMwMWE2MGMtMTAweDEwMC5wbmc_p_p100_p_3D.png" style="width:100px;height:100px;margin:60px 20px 0;">
 						<p style="text-align:center;font-size:20px;color:#000;">微信</p>
 					</div>
 					<div style="min-height:200px;float:left;">
-						<img  src="https://ccdn.goodq.top/caches/9b69daffc17579b848483c854813cad2/aHR0cHM6Ly81Y2RkM2FhNWM0NmVhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTgvMDgvNjFjNTQ1NWFmY2MyNGViMmZjY2VkOTk3YmMwMWE2MGMtMTAweDEwMC5wbmc_p_p100_p_3D.png" style="width:100px;height:100px;margin:60px 40px 0;">
+						<img  src="https://ccdn.goodq.top/caches/9b69daffc17579b848483c854813cad2/aHR0cHM6Ly81Y2RkM2FhNWM0NmVhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTgvMDgvNjFjNTQ1NWFmY2MyNGViMmZjY2VkOTk3YmMwMWE2MGMtMTAweDEwMC5wbmc_p_p100_p_3D.png" style="width:100px;height:100px;margin:60px 20px 0;">
 						<p style="text-align:center;font-size:20px;color:#000;">微博</p>
 					</div>
 				</div>
 			</peng>
-			<zhi >
+			<zhi>
 			</zhi>
 		</div>
 	</div>
@@ -117,7 +140,6 @@
 						</div>
 					</div>
 				</div>
-				
 			</div>
 			<div>
 				<photo></photo>
@@ -148,7 +170,9 @@
 	</template>
 	<template id="no3">
 		<div>
-			茶叶
+			<div style="width:100%;background-color:#ccc;">
+				<shun></shun>
+			</div>
 		</div>
 	</template>
 	<template id="no4">
@@ -204,6 +228,10 @@
 			<div>
 				<jin_r></jin_r>
 			</div>
+			<div style="min-height:400px;width:100%">
+				<jin_d>
+				</jin_d>
+			</div>
 		</div>
 	</template>
 
@@ -224,10 +252,10 @@
 	</template>
 	<template id="mo">
 		<div class="dian">
-			<div v-for="i in arr2" style="float:left;margin:0px 60px;padding:50px 0 0 ;">
+			<div v-for="i in arr2" class="cha">
 				<img :src="i.url">
 				<p style="margin:10px 0;">{{i.title}}</p>
-				<div style="width:320px;border-bottom: solid 1px #ccc;"></div>
+				<div class="fen"></div>
 				<p style="margin:10px 0;">{{i.price}}</p>
 			</div>
 		</div>
@@ -250,8 +278,8 @@
 									茶叶源于中国，茶叶最早是被作为祭品使用的。但从春秋后期就被人们作为菜食，在西汉中期发展为药用，西汉后期才发展为宫廷高级饮料，普及民间作为普通饮料那是西晋以后的事。发现最早人工种植茶叶的遗迹在浙江余姚的田螺山遗址，已有6000多年的历史。饮茶始于中国。
 								</p>
 							</div>
-							<div style="margin:10px 30px;background-color:yellowgreen;width:80px;padding:10px 0px;text-align: center;color:#fff">
-								<p>了解更多</p>
+							<div style="margin:10px 25px;background-color:yellowgreen;width:80px;padding:10px 0px;color:#fff">
+								<p style="text-align: center;">了解更多</p>
 							</div>
 						</div>
 					</div>
@@ -261,8 +289,8 @@
 	</template>
 	<template id="jin">
 		<div>
-			<div v-for="i in arr3" style="float:left;margin:60px 45px;">
-				<img :src="i.url" style="width:150px;height:50px;">
+			<div v-for="i in arr3" style="float:left;margin:60px 40px;">
+				<img :src="i.url" style="width:140px;height:50px;">
 			</div>
 		</div>
 	</template>
@@ -337,13 +365,24 @@
 				</div>
 			</div>
 			<div style="width:90%;min-height:400px;background-color:#fff;margin:0 auto;">
-				<div style="width:385px;height:400px;float:left;margin:0 25px;" v-for="i in arr5">
+				<div style="width:385px;height:400px;float:left;margin:0 15px;" v-for="i in arr5">
 					<img :src="i.url" style="width:100%;height:200px;">
 					<p style="text-align:center;margin:5px 0;color:#666;">{{i.title}}</p>
 					<p style="margin:10px 0;line-height:30px;color:#666;">{{i.miao}}</p>
 				</div>
 			</div>
 		</div>
+	</template>
+	<!-- no3 -->
+	<template id="shun">
+		<div style="min-height:70px;">
+			<div style="float:right;">
+				<div style="float:left;padding:0 20px;" v-for="i in arr10">
+					<p></p>
+				</div>
+			</div>
+		</div>
+
 	</template>
 	<!-- no4 -->
 	<template id="fan_e">
@@ -369,7 +408,7 @@
 		<div>
 			<div style="width:100%;min-height:600px;background-color:#fff;padding:0 0 50px;">
 				<div style="width:75%;min-height:600px;margin:0px auto;">
-					<div style="width:250px;min-height:300px;float:left;margin:0 12px;" v-for="i in arr6">
+					<div style="width:230px;min-height:300px;float:left;margin:0 12px;" v-for="i in arr6">
 						<img :src="i.url" style="width:100%;height:280px;">
 					</div>
 				</div>
@@ -408,6 +447,51 @@
 			</div>
 		</div>
 	</template>
+	<template id="jin_s">
+		<div>
+			<div style="width:100%;float:left;">
+				<div style="width:70%;min-height:200px;background-color:#fff;margin-left:270px;margin-top:-200px;">
+					<div style="width:80%;min-height:200px;float:left;">
+						<div>
+							<p style="padding:30px 10px 0;font-size:20px;">2019茶叶展-第十六届上海国际茶业交易春季博览会</p>
+						</div>
+						<div>
+							<p style="line-height:30px;color:#ccc;padding:10px 10px;">野生种遍见于中国长江以南各省的山区，为小乔木状，叶片较大，常超过10厘米长，长期以来，经广泛栽培，毛被及叶型变化很大。茶叶可作饮品，含有多种有益成分，并有保健功效。</p>
+						</div>
+						<div>
+							<p style="padding:10px 10px;color:green;">阅读正文 →</p>
+						</div>
+					</div>
+					<div style="width:20%;min-height:200px;float:left;">
+						<img src="https://ccdn.goodq.top/caches/9b69daffc17579b848483c854813cad2/aHR0cHM6Ly81Y2RkM2FhNWM0NmVhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNWQ3ZTc0ZDI3NTEzM2MxZmZkYTVkZTFmY2FiNGFkZTctMjAweDEzMC5qcGc_p_p100_p_3D.jpg" style="width:70%;height:100px;margin:30px 20px;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</template>
+	<template id="jin_q">
+		<div>
+			<div style="width:100%;float:left;">
+				<div style="width:70%;min-height:200px;background-color:#fff;margin-left:270px;margin-top:-200px;">
+					<div style="width:80%;min-height:200px;float:left;">
+						<div>
+							<p style="padding:30px 10px 0;font-size:20px;">2019茶叶展-第十六届上海国际茶业交易春季博览会</p>
+						</div>
+						<div>
+							<p style="line-height:30px;color:#ccc;padding:10px 10px;">野生种遍见于中国长江以南各省的山区，为小乔木状，叶片较大，常超过10厘米长，长期以来，经广泛栽培，毛被及叶型变化很大。茶叶可作饮品，含有多种有益成分，并有保健功效。</p>
+						</div>
+						<div>
+							<p style="padding:10px 10px;color:green;">阅读正文 →</p>
+						</div>
+					</div>
+					<div style="width:20%;min-height:200px;float:left;">
+						<img src="https://ccdn.goodq.top/caches/9b69daffc17579b848483c854813cad2/aHR0cHM6Ly81Y2RkM2FhNWM0NmVhLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDUvNWQ3ZTc0ZDI3NTEzM2MxZmZkYTVkZTFmY2FiNGFkZTctMjAweDEzMC5qcGc_p_p100_p_3D.jpg" style="width:70%;height:100px;margin:30px 20px;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</template>
+
 
 	<!-- no6 -->
 	<template id="jin_w">
@@ -437,7 +521,13 @@
 			</div>
 		</div>
 	</template>
-
+	<template id="jin_d">
+			<div>
+				<div style="margin:20px auto;width:60%;">
+					<div id="XSDFXPage" class="XSDFXPage">
+				</div>
+			</div>
+	</template>
 	<script src="vue.js"></script>
 	<script src="vue-router.js"></script>
 	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
@@ -603,11 +693,6 @@
 						title:'冲泡工艺',
 						miao:"明万历二十三年（1595）张源撰写的《茶录》中，对当时洞庭东西山绿茶（炒青）的采摘、炒制有较为详细的记载，其炒制过程分杀青、轻团、焙干等工序，已与当今洞庭碧螺春的炒制工艺基本一致。"
 						},
-
-
-
-
-
 					]
 
 				}
@@ -656,6 +741,22 @@
 		})
 		Vue.component('jin_j',{
 			template:"#jin_j",
+			data(){
+				return{
+
+				}
+			}
+		})
+		Vue.component('jin_s',{
+			template:"#jin_s",
+			data(){
+				return{
+
+				}
+			}
+		})
+		Vue.component('jin_q',{
+			template:"#jin_q",
 			data(){
 				return{
 
@@ -712,6 +813,28 @@
 				}
 			}
 		})
+		Vue.component('jin_d',{
+			template:"#jin_d",
+			data(){
+				return{
+
+				}
+			}
+		})
+		Vue.component('shun',{
+			template:"#shun",
+			data(){
+				return{
+					arr10:[
+						{}
+
+
+					]
+				}
+			}
+		})
+
+
 
 
 		var router = new VueRouter({
@@ -723,8 +846,8 @@
 				{path:'/no5',component:{template:"#no5"},
 				children:[
 					{path:'/',component:{template:'<p><jin_j></jin_j></p>'}},
-					{path:'no2',component:{template:'<p>新闻动态</p>'}},
-					{path:'no3',component:{template:'<p>产品新闻</p>'}},
+					{path:'no2',component:{template:'<p><jin_s></jin_s></p>'}},
+					{path:'no3',component:{template:'<p><jin_q></jin_q></p>'}},
 				]},
 				{path:'/no6',component:{template:"#no6"}},
 			]
@@ -745,5 +868,196 @@
 			router
 		})
 	</script>
+	<script>
+    // 百度地图API功能
+    // 创建Map实例
+
+    var markerPointLevel1 = [
+        {
+            buildingNum: "123",
+            id: 1,
+            lat: "30.207036169515438",
+            lng: "120.08899292561351",
+            name: "西湖区"
+        },
+        {
+            buildingNum: "79",
+            id: 2,
+            lat: "30.34473201035828",
+            lng: "120.15884493257122",
+            name: "拱墅区"
+        },
+        {
+            buildingNum: "51",
+            id: 3,
+            lat: "30.187587607727094",
+            lng: "120.19237042945677",
+            name: "滨江区"
+        },
+        {
+            buildingNum: "16",
+            id: 6,
+            lat: "30.2323576392334",
+            lng: "120.18012613888587",
+            name: "上城区"
+        }
+    ];
+
+    var data = {
+        center: {
+            level: 15,
+            longitude: 120.154571,
+            dimensionality: 30.270801
+        },
+        setting: {
+            cityName: "杭州",
+            enableScrollWheelZoom: true,
+            imgSize: {
+                x: 20,
+                y: 50
+            },
+            param: {
+                //说明窗口
+                width: 5,
+                height: 3,
+                title: "高压塔3"
+            }
+        }
+    }
+    var map = new BMap.Map("XSDFXPage", { enableMapClick: true });
+    const point = new BMap.Point(
+        data.center.longitude,
+        data.center.dimensionality
+    );
+    map.centerAndZoom(point, data.center.level);
+    // 添加地图类型控件
+    map.addControl(new BMap.MapTypeControl());
+    // 设置地图显示的城市 此项是必须设置的
+    map.setCurrentCity("杭州");
+    // 开启鼠标滚轮缩放
+    map.enableScrollWheelZoom(true);
+
+    /************************************************
+     添加工具条、比例尺控件
+     *************************************************/
+    map.addControl(new BMap.ScaleControl({ anchor: BMAP_ANCHOR_TOP_LEFT }));
+    map.addControl(new BMap.NavigationControl());
+    map.addControl(
+        new BMap.NavigationControl({
+            anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+            type: BMAP_NAVIGATION_CONTROL_SMALL
+        })
+    );
+    /************************************************/
+
+
+
+    /*覆盖物1级层 zoom<11的时候展示
+ --------------------------------*/
+    function ComplexCustomOverlay1(point, nums, area, districtId){
+        this._point = point;
+        this._nums = nums;
+        this._area = area;
+        this._districtId = districtId;
+    }
+    ComplexCustomOverlay1.prototype = new BMap.Overlay();
+
+    ComplexCustomOverlay1.prototype.initialize = function(map) {
+        this._map = map;
+        var div = (this._div = document.createElement("div"));
+        var point = this._point;
+        div.style.position = "absolute";
+        div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
+        div.style.backgroundColor = "rgba(234,41,60,0.8)";
+        div.style.color = "#fff";
+        div.style.height = "80px";
+        div.style.width = "80px";
+        div.style.borderRadius = "100%";
+        div.style.boxSizing = "content-box";
+        div.style.whiteSpace = "nowrap";
+        div.style.MozUserSelect = "none";
+        div.style.fontSize = "12px";
+        div.style.textAlign = "center";
+        div.style.cursor = "pointer";
+
+        //区
+        var areaDom = (this._areaDom = document.createElement("div"));
+        areaDom.appendChild(document.createTextNode(this._area));
+        areaDom.style.height = "40px";
+        areaDom.style.lineHeight = "60px";
+        areaDom.style.fontSize = "14px";
+        div.appendChild(areaDom);
+
+        //楼盘数量
+        var numsDom = (this._numsDom = document.createElement("div"));
+        numsDom.appendChild(document.createTextNode(this._nums + "个楼盘"));
+        numsDom.style.height = "40px";
+        numsDom.style.lineHeight = "20px";
+        numsDom.style.boxSizing = "content-box";
+        numsDom.style.fontSize = "14px";
+        div.appendChild(numsDom);
+
+        var that = this;
+
+        div.onmouseover = function() {
+            this.style.zIndex = 99999;
+            this.style.backgroundColor = "rgba(234,41,60,1)";
+        };
+        div.onmouseout = function() {
+            this.style.zIndex = BMap.Overlay.getZIndex(point.lat);
+            this.style.backgroundColor = "rgba(234,41,60,0.8)";
+        };
+        div.onclick = function() {
+            filterObj.districtId = that._districtId;
+            map.centerAndZoom(point, 14); //跳到设置点并设置zoom为14级
+            $(".l-select.district").find(".result")[0].childNodes[0].textContent =
+                that._area; //点击区域,相应左侧区域文字要同步
+        };
+        map.getPanes().labelPane.appendChild(div);
+
+        return div;
+    };
+
+    ComplexCustomOverlay1.prototype.draw = function(){
+        var map = this._map;
+        var pixel = map.pointToOverlayPixel(this._point);
+        this._div.style.left = pixel.x - 40 + "px";
+        this._div.style.top  = pixel.y - 40 + "px";
+    }
+
+    function ComplexCustomOverlay1(point, nums, area, districtId) {
+        this._point = point;
+        this._nums = nums;
+        this._area = area;
+        this._districtId = districtId;
+    }
+
+    // 编写自定义函数,创建标注(1级)
+    function addMarkerLevel1(point, nums, area, districtId) {
+        // var marker = new BMap.Marker(point);
+        // map.addOverlay(marker);
+        var myCompOverlay = new ComplexCustomOverlay1(
+            point,
+            nums,
+            area,
+            districtId
+        );
+        map.addOverlay(myCompOverlay);
+    }
+
+    map.clearOverlays();
+    for (let i = 1; i < markerPointLevel1.length; i++) {
+        let point = new BMap.Point(
+            markerPointLevel1[i].lng,
+            markerPointLevel1[i].lat
+        );
+        addMarkerLevel1(
+            point,
+            markerPointLevel1[i].buildingNum,
+            markerPointLevel1[i].name,
+            markerPointLevel1[i].id
+        );
+    }
+</script>
 </body>
 </html>
