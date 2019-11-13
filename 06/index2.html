@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			.shou {
+				overflow: hidden;
+			}
+
+			.shou li {
+				float: left;
+				font-size: 18px;
+				color: #eee;
+				padding: 0 25px;
+				line-height: 64px;
+			}
+
+			.shou li:nth-child(1) {
+				border-bottom: solid 1px blue;
+				color: blue;
+			}
+
+			.shou li:hover {
+				border-bottom: solid 1px blue;
+				color: blue;
+			}
+
+			.xian {
+				width: 25%;
+				height: 1px;
+				border: solid 1px #ccc;
+				margin: 0 100px;
+				background: #EEEEEE;
+			}
+
+			.jin {
+				width: 80%;
+				min-height: 40px;
+				margin: 50px auto 50px;
+				background: #fff;
+				border-radius: 13px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" style="background:#0c1248;">
+			<fan style="min-height:60px;"></fan>
+			<jin style="min-height:300px;margin:25px auto 0;"></jin>
+			<peng style="min-height:300px;margin:210px 0 0;">
+				<div slot="shi">
+					<div style="width:20%;margin:0px auto;padding:30px 0 20px;">
+						<p style="text-align:center;font-size:32px;color:#eee;font-weight:bold;">使用流程</p>
+					</div>
+				</div>
+				<div slot="liu">
+					<div style="width:40%;min-height:60px;margin:0px auto;">
+						<p style="line-height:30px;font-size:16px;text-align:center;color:#eee;">我们的网站构建器，将传统的编码工作转化为直观的拖拽操作和文字录入。在这里，您仅需花上10分钟便可以完成一个H5响应式网站。</p>
+					</div>
+				</div>
+			</peng>
+			<fan_f style="margin:70px auto;min-height:300px;"></fan_f>
+			<fan_j style="margin:40px auto;min-height:300px;">
+				<div slot="kai">
+					<div style="width:20%;margin:0px auto;padding:30px 0 20px;">
+						<p style="text-align:center;font-size:32px;color:#eee;font-weight:bold;">全球服务</p>
+					</div>
+				</div>
+				<div slot="shun">
+					<div style="width:40%;min-height:60px;margin:0px auto;">
+						<p style="line-height:30px;font-size:16px;text-align:center;color:#eee;">我们的网站构建器，将传统的编码工作转化为直观的拖拽操作和文字录入。在这里，您仅需花上10分钟便可以完成一个H5响应式网站。</p>
+					</div>
+				</div>
+			</fan_j>
+			<tao style="margin:50px auto 0;">
+				<div slot="dao">
+					<div style="width:20%;margin:0px auto;padding:30px 0 20px;">
+						<p style="text-align:center;font-size:32px;color:#eee;font-weight:bold;">关于我们</p>
+					</div>
+				</div>
+				<div slot="mei">
+					<div style="width:40%;min-height:60px;margin:0px auto;">
+						<p style="line-height:30px;font-size:16px;text-align:center;color:#eee;">我们的网站构建器，将传统的编码工作转化为直观的拖拽操作和文字录入。在这里，您仅需花上10分钟便可以完成一个H5响应式网站。</p>
+					</div>
+				</div>
+			</tao>
+		</div>
+		<template id="fan">
+			<div>
+				<div style="overflow:hidden;width:90%;margin:0 auto;">
+					<div style="width:15%;margin:0 0px 0 30px;min-height:60px;float:left;">
+						<div>
+							<img src="//5d3969e45410c.t73.qifeiye.com/qfy-content/uploads/2019/07/6c01fb75c2ce26ede8ba05ce70a3057f.png"
+							 style="width:100%;height:50px;margin:5px 0;">
+						</div>
+					</div>
+					<div style="width:60%;min-height:60px;float:right;">
+						<ul class="shou">
+							<li v-for="i in arr">{{i}}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="jin">
+			<div>
+				<div style="width:90%;margin:0 auto;min-height:300px;overflow:hidden;">
+					<div style="width:43%;min-height:300px;float:left;">
+						<div>
+							<p style="padding:30px 45px 5px;font-size:50px;color:#eee;">践行惠普金融</p>
+						</div>
+						<div>
+							<p style="padding:0px 45px 30px;font-size:50px;color:#eee;">助力<span style="color:#1c8dff">美好生活</span></p>
+						</div>
+						<div style="width:65%;min-height:60px;margin:0 50px;padding:0 0 30px;">
+							<p style="line-height:30px;font-size:16px;color:#eee;">我们的网站构建器，将传统的编码工作转化为直观的拖拽操作和文字录入。在这里，您仅需花上10分钟便可以完成一个H5响应式网站，您会发现完全不需要编写一行代码，这就是起飞页自助建站的神奇之处。</p>
+						</div>
+						<div style="min-height:60px;overflow:hidden;">
+							<div style="float:left;width:20%;min-height:40px;background:#0000FF;margin:10px 20px 0 50px;border-radius:20px;">
+								<p style="text-align:center;line-height:40px;color:#eee">联系我们 →</p>
+							</div>
+							<div style="float:left;width:20%;min-height:40px;border:solid 1px #0000FF;margin:10px 0px 0 20px;border-radius:20px;">
+								<p style="text-align:center;line-height:40px;color:#eee">点我咨询 →</p>
+							</div>
+						</div>
+					</div>
+					<div style="width:50%;min-height:300px;float:left;">
+						<div style="width:100%;min-height:425px;">
+							<img src="https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cHM6Ly81ZDM5NjllNDU0MTBjLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvM2Q1MjJlZDZlYTZiM2I2YWEwYmVjNGM3YTBkMjcxNzIucG5n.png"
+							 style="width:100%;height:420px;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="peng">
+			<div>
+				<slot name="shi"></slot>
+				<slot name="liu"></slot>
+				<div style="width:90%;min-height:300px;margin:60px auto 40px">
+					<div style="width:30%;min-height:300px;background:#102a63;float:left;margin:0 22px;" v-for="i in arr">
+						<div>
+							<img :src="i.url" style="padding:120px 165px 30px;width:80px;height:70px;">
+						</div>
+						<p style="text-align:center;font-size:20px;color:#eee;">{{i.title}}</p>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="fan_f">
+			<div>
+				<div style="width:90%;min-height:500px;margin:0 auto;overflow:hidden;">
+					<div style="width:50%;min-height:500px;float:left;background:#0000FF;">
+						<div style="width:40%;min-height:60px;margin:10px auto;">
+							<p style="padding:70px 0 0px;text-align:center;font-size:30px;color:#fff;font-weight:bold;">近期货币</p>
+							<p style="text-align:center;padding:10px 0 20px;color:#eee">购买进度</p>
+							<div class="xian"></div>
+						</div>
+						<div style="margin:30px auto 10px;width:60%;min-height:60px;">
+							<p style="line-height:60px;text-align:center;font-size:30px;color:#fff">00 天 20 时 09 分钟 02 秒</p>
+						</div>
+						<div class="jin">
+							<p style="text-align:center;line-height:40px;">购买进度</p>
+						</div>
+						<div style="width:30%;margin:0 auto;background:deepskyblue;padding:15px 0;border-radius:30px;">
+							<p style="text-align:center;color:#fff">联系我们 →</p>
+						</div>
+					</div>
+					<div style="width:50%;min-height:500px;float:left;">
+						<div style="width:50%;margin:60px 40px 40px;min-height:40px;">
+							<p style="font-size:32px;color:#fff;padding:10px 0;">最值得信赖的平台</p>
+						</div>
+						<div>
+							<p style="padding:0 40px;line-height:30px;color:#fff">移动互联网的稳定快速发展带动了货币行业的迅速崛起，在如此庞大的货币海洋中，哪些是您所需要的货币呢？</p>
+						</div>
+						<div style="width:50%;margin:40px 40px 30px;min-height:40px;">
+							<p style="line-height:30px;color:#fff"><span style="color:blue;">√</span>　享受专属优惠券</p>
+							<p style="line-height:30px;color:#fff"><span style="color:blue;">√</span>　用于商城消费 先用后付</p>
+							<p style="line-height:30px;color:#fff;"><span style="color:blue;">√</span> 随心付3/6/9/12期随心付</p>
+						</div>
+						<div style="width:15%;margin:0 40px">
+							<img src="https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cHM6Ly81ZDM5NjllNDU0MTBjLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvM2UwNjU1NTQ1Y2Q2OGJiMjRmZTllYzNhNmIzMzc4ZTEucG5n.png"
+							 style="width:80%;height:60px;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="fan_j">
+			<div>
+				<div style="width:90%;min-height:300px;margin:0 auto">
+					<slot name="kai"></slot>
+					<slot name="shun"></slot>
+					<div style="width:65%;margin:45px auto 0;">
+						<img src="https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cHM6Ly81ZDM5NjllNDU0MTBjLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvMjE4N2VmMjZiNjA3YmZmZTA0NTM4MjEzYjQ2MTJkYmMuanBn.jpg"
+						 style="width:100%;height:400px;vertical-align:top;">
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="tao">
+			<div>
+				<div style="width:90%;min-height:400px;margin:0px auto;">
+					<slot name="dao"></slot>
+					<slot name="mei"></slot>
+					<div style="overflow:hidden;">
+						<div style="float:left;width:42%;min-height:400px;background:#0000FF;margin:80px 30px;" v-for="i in arr">
+							<img :src="i.url" style="width:20%;height:60px;padding:50px 30px 20px;">
+							<p style="padding:10px 30px;line-height:30px;font-size:24px;color:#fff">{{i.title}}</p>
+							<p style="padding:10px 30px;color:#eee;line-height:30px;">{{i.content}}</p>
+							<p style="padding:10px 30px;color:#eee">{{i.text}}</p>
+							<p style="padding:10px 30px;line-height:30px;color:#eee">{{i.miao}}</p>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</template>
+		<script src="vue.js"></script>
+		<script>
+			Vue.component('fan', {
+				template: "#fan",
+				data() {
+					return {
+						arr: ['首页', '使用流程', '全球服务', '关于我们', '专家团队', '联系我们', '合作伙伴']
+					}
+				}
+			})
+			Vue.component('jin', {
+				template: "#jin",
+				data() {
+					return {
+
+					}
+				}
+			})
+			Vue.component('peng', {
+				template: "#peng",
+				data() {
+					return {
+						arr: [{
+								url: 'https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cHM6Ly81ZDM5NjllNDU0MTBjLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvOWNlZjc3MThhM2UzYjUwZWMwNmFlMzY2MTM2YzI2MTYucG5n.png',
+								title: '创建账户'
+							},
+							{
+								url: 'https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cHM6Ly81ZDM5NjllNDU0MTBjLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvMjRkOWZhNDMyOGRiNTYxMGU0MDg5MmZiYWY0MWEzZTUucG5n.png',
+								title: '安全保障'
+							},
+							{
+								url: 'https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cHM6Ly81ZDM5NjllNDU0MTBjLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvNDg1Zjk2YWE4MmFhMzdhODgzYWM3MWVjMDgxMDA5YWQucG5n.png',
+								title: '绑定付款'
+							},
+
+						]
+					}
+				}
+			})
+			Vue.component('fan_f', {
+				template: "#fan_f",
+				data() {
+					return {
+
+					}
+				}
+			})
+			Vue.component('fan_j', {
+				template: "#fan_j",
+				data() {
+					return {
+
+					}
+				}
+			})
+			Vue.component('tao', {
+				template: "#tao",
+				data() {
+					return {
+						arr: [
+							{
+							url: 'https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cHM6Ly81ZDM5NjllNDU0MTBjLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvNjJjMzNhYTUyN2NjMTIyMTFkNmM0ZjI3ZWE4YTkyZDQtZTE1NjM5NTAwMTc0MzgucG5n.png',
+							title: '税收居民身份须知！',
+							content: '　我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制 作和维护成为一件轻松惬意的事' ,
+							text:'　当今最领先的响应式自助建站平台',
+							miao:'　我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事 '
+							},
+							{
+							url: 'https://ccdn.goodq.top/caches/76b523e47b518e3280b3a453638be094/aHR0cHM6Ly81ZDM5NjllNDU0MTBjLnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDcvZDhhYzg0YWE1ZTM2Y2RjMmFkYjdmMmNiNWY1YzI3ZWEucG5n.png',
+							title: '移动支付安全小知识！',
+							content: '　我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制 作和维护成为一件轻松惬意的事' ,
+							text:'　当今最领先的响应式自助建站平台',
+							miao:'　我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事 '
+							}
+						]
+					}
+				}
+			})
+			new Vue({
+				el: "#box",
+
+			})
+		</script>
+	</body>
+</html>
